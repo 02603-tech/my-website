@@ -3907,3 +3907,28 @@ input, select, textarea {
 			}
 
 		}
+/* --- Nova Teches 最终视觉补丁 --- */
+#intro {
+    background-color: #f4f4f7 !important; /* 浅灰色背景 */
+    background-image: url("../../images/banner.jpg") !important;
+    background-position: 95% center !important; /* 图片往右推 */
+    background-size: contain !important; 
+    background-repeat: no-repeat !important;
+    padding-left: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#intro .inner {
+    background: rgba(255, 255, 255, 0.85) !important; /* 文字背景微调 */
+    backdrop-filter: blur(10px);
+    padding: 2.5em !important;
+    border-radius: 20px;
+    margin-left: 8% !important;
+    max-width: 40% !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* 暂时关闭左侧边栏，让模特露脸 */
+#sidebar { display: none !important; } 
+
