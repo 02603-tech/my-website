@@ -3860,27 +3860,22 @@ input, select, textarea {
 							background-color: #b74e91;
 						}
 
-		}
-
 		@media screen and (max-width: 736px) {
-
-			#sidebar {
-				display: none;
-			}
-
-		}
+    #sidebar {
+        display: none;
+    }
+} /* 这里是关闭 @media 的大括号 */
 
 /* Intro */
-
-	#intro {
+#intro {
     background-attachment: fixed;
     background-image: url("../../images/banner.jpg");
-    /* 核心修改：让图片靠右对齐，把模特的脸从侧边栏后面推出来 */
     background-position: right center; 
     background-repeat: no-repeat;
     background-size: cover;
     padding-left: 0;
 }
+
 
 		#intro p {
 			font-size: 1.25em;
