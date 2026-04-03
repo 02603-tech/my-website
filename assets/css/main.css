@@ -1,76 +1,100 @@
-/* * Nova Teches - 2026 High-Tech Minimalist Style
- * 抛弃模板束缚，回归纯净视觉
+*
+ * NOVA TECHES - 2026 Global Redesign
+ * 风格：极简、浅灰、科技感
+ * 抛弃旧模板束缚，回归纯净视觉
  */
 
 :root {
-    --bg-light-gray: #f5f5f7;
-    --text-dark: #1d1d1f;
-    --accent-blue: #0066cc;
+    --bg-gray: #f5f5f7; /* 苹果官网同款浅灰 */
+    --text-main: #1d1d1f;
+    --text-sub: #424245;
+    --glass: rgba(255, 255, 255, 0.8);
 }
 
-/* 1. 基础全局设置 */
-body, html {
-    margin: 0; padding: 0;
+/* 1. 全局设置：强制去色，回归浅灰 */
+body, html, #wrapper {
+    margin: 0; padding: 0 !important;
+    background-color: var(--bg-gray) !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-light-gray);
-    color: var(--text-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
 }
 
-/* 2. 移除烦人的侧边栏占位，让图片占满全屏 */
+/* 2. 移除侧边栏占位，让图片占满全屏 */
 #wrapper { padding-left: 0 !important; }
 
-/* 3. 顶部透明导航（让模特脸部空间最大化） */
+/* 3. 顶部透明导航（解放左侧空间，不挡脸） */
 #sidebar {
-    width: 100% !important; height: 60px !important;
+    width: 100% !important; height: 64px !important;
     position: fixed !important; top: 0; left: 0;
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.01) !important;
     backdrop-filter: blur(20px) !important;
     display: flex !important; justify-content: center; align-items: center;
-    z-index: 999; border: none !important;
+    z-index: 1000; border: none !important;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05) !important;
 }
 
 #sidebar nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
-#sidebar nav ul li { margin: 0 20px; }
+#sidebar nav ul li { margin: 0 25px; }
 #sidebar nav ul li a { 
-    text-decoration: none; color: var(--text-dark); 
-    font-size: 14px; font-weight: 500; letter-spacing: 1px;
+    text-decoration: none; color: var(--text-main); 
+    font-size: 14px; font-weight: 500; opacity: 0.8;
 }
 
-/* 4. 核心：Banner 区域重组 */
+/* 4. 核心：Banner 区域（全屏右对齐，模特必露脸） */
 #intro {
-    width: 100% !important; min-height: 100vh !important;
-    background-color: var(--bg-light-gray) !important;
+    width: 100vw !important; height: 100vh !important;
+    background-color: var(--bg-gray) !important;
     background-image: url("../../images/banner.jpg") !important;
-    background-size: contain !important; /* 确保模特全貌显示 */
-    background-position: right center !important; /* 图片靠右 */
+    /* 核心：contain 模式确保图片不被切，靠右对齐确保脸露出来 */
+    background-size: contain !important; 
+    background-position: right center !important; 
     background-repeat: no-repeat !important;
-    display: flex !important; align-items: flex-end; /* 文字压在左下 */
+    display: flex !important; align-items: flex-end !important;
     padding: 0 !important;
 }
 
-/* 5. 文字框：悬浮磨砂玻璃感 */
+/* 5. 文字框：左下角悬浮磨砂玻璃感 */
 #intro .inner {
-    background: rgba(255, 255, 255, 0.7) !important;
+    background: var(--glass) !important;
     backdrop-filter: blur(15px);
-    padding: 2.5rem !important;
-    margin-left: 5% !important;
-    margin-bottom: 5% !important;
-    border-radius: 24px;
-    max-width: 420px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    padding: 3rem !important;
+    margin-left: 6% !important;
+    margin-bottom: 6% !important;
+    border-radius: 28px;
+    max-width: 440px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
-#intro h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
-#intro p { font-size: 1.1rem; line-height: 1.6; opacity: 0.8; }
+#intro h1 { font-size: 3.2rem; margin-bottom: 0.8rem; color: #000; letter-spacing: -1px; }
+#intro p { font-size: 1.2rem; line-height: 1.5; color: var(--text-sub); }
 
-/* 6. 产品板块改为清爽白底 */
+/* 6. 产品板块：彻底告别沉闷蓝色 */
 .spotlights > section {
     background-color: #ffffff !important;
-    padding: 5rem 10% !important;
+    padding: 6rem 10% !important;
     display: flex !important; align-items: center;
+    border-bottom: 1px solid #eee;
 }
 
-/* 7. 手机适配：自动切换为堆叠模式 */
+.spotlights .inner h2 { color: #000; font-size: 2.5rem; }
+.spotlights .inner p { color: #666; font-size: 1.1rem; }
+
+/* 7. 按钮：黑白色调，拒绝突兀蓝 */
+.button {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+    padding: 1rem 2.5rem !important;
+    font-weight: 600 !important;
+    border: none !important;
+    transition: 0.3s;
+}
+
+.button:hover { transform: scale(1.05); opacity: 0.8; }
+
+/* 8. 移动端自适应 */
 @media screen and (max-width: 768px) {
     #sidebar { display: none !important; }
     #intro { background-size: cover !important; background-position: center !important; }
