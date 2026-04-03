@@ -3858,38 +3858,50 @@ input, select, textarea {
 						#sidebar nav a:after {
 							background-image: none;
 							background-color: #b74e91;
-						}
-
-		@media screen and (max-width: 736px) {
-    #sidebar {
-        display: none;
-    }
-} /* 这里是关闭 @media 的大括号 */
-
-/* Intro */
-#intro {
-    background-attachment: fixed;
-    background-image: url("../../images/banner.jpg");
-    background-position: right center; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-left: 0;
-}
-
-
-		#intro p {
-			font-size: 1.25em;
-		}
-
-			@media screen and (max-width: 980px) {
-
-				#intro p br {
-					display: none;
-				}
-
 			}
 
-			@media screen and (max-width: 736px) {
+	@media screen and (max-width: 736px) {
+		#sidebar {
+			display: none;
+		}
+	}
+
+	/* --- Nova Teches Intro Section --- */
+	#intro {
+		background-attachment: fixed;
+		background-image: url("../../images/banner.jpg");
+		/* 强制让图片重心向右靠 85%，彻底避开侧边栏遮挡 */
+		background-position: 85% center !important; 
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding-left: 0 !important;
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+	}
+
+	#intro .inner {
+		padding: 4em;
+		background: rgba(0, 0, 0, 0.1); 
+		border-radius: 10px;
+		margin-left: 5%;
+	}
+
+	#intro p {
+		font-size: 1.25em;
+	}
+
+	@media screen and (max-width: 980px) {
+		#intro {
+			background-position: center center !important;
+			padding: 2em !important;
+		}
+		#intro p br {
+			display: none;
+		}
+	}
+
 
 				#intro p {
 					font-size: 1em;
